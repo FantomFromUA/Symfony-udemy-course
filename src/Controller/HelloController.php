@@ -9,10 +9,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class HelloController extends AbstractController
 {
     private array $messages = [
-        "Hello",
-        "Hi",
-        "Whats UP",
-        "Bye!"
+        ['message' => 'Hello', 'created' => '2025/01/29'],
+        ['message' => 'Hi', 'created' => '2024/11/29'],
+        ['message' => 'Good morning', 'created' => '2022/05/12'],
+        ['message' => 'Bye!', 'created' => '2021/07/12'],
     ];
 
     #[Route('/messages/limit/{limit<\d>?3}', name: 'get_all_messages')]
