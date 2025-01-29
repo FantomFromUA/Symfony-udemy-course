@@ -3,8 +3,10 @@
 {% block body %}
 <div>
     {% if limit > 0 %}
-        {% for message in messages|slice(0, limit) %}
-            <div>{{message.message}}</div>
+        {% for key, message in messages|slice(0, limit) %}
+            <div>
+                <a href="{{ path('get_one_message', {id: key}) }}">{{message.message}}</a>
+            </div>
             <div style="color: grey;">
                 {{include('Hello/_message.html.twig', {message: message})}}
             </div>
